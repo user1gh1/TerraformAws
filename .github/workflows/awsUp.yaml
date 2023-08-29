@@ -17,7 +17,8 @@ jobs:
           with:
             terraform_version: 1.5.6
           env:
-            GITHUB_TOKEN: ${{ secrets.TOKEN_GITHUB }}
+            ACCESS_KEY: ${{ secrets.AWS_ACCESS_KEY }}
+            SECRET_KEY: ${{ secrets.AWS_SECREY_KEY }}
         - name: Init Terraform
           run: terraform init
         - name: Terraform plan
