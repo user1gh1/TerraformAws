@@ -13,8 +13,8 @@ jobs:
           uses: actions/checkout@v3
         - name: Configure AWS credentials
           run: |
-            echo "MY_CUSTOM_AWS_KEY=${{ secrets.AWS_ACCESS_KEY }}" >> $GITHUB_ENV
-            echo "AWS_SECRET_ACCESS_KEY=${{ secrets.AWS_SECREY_KEY }}" >> $GITHUB_ENV
+            echo "access_key=${{ secrets.AWS_ACCESS_KEY }}" >> $GITHUB_ENV
+            echo "secret_key=${{ secrets.AWS_SECREY_KEY }}" >> $GITHUB_ENV
         - name: Setup Terraform
           uses: hashicorp/setup-terraform@v2
           with:
