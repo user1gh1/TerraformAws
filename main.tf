@@ -1,6 +1,4 @@
 
- # 123
-
 
 resource "aws_key_pair" "generated_key" {
   key_name   = "my_aws_key"
@@ -107,6 +105,7 @@ resource "aws_subnet" "privatesubnet" {
 #===============================>
 resource "aws_s3_bucket" "my_bucket" {
   bucket_prefix = "mybucket-s3-"
+  force_destroy = true
   tags = {
     Name        = "mybucket-s3-"
     Environment = "Environment"
@@ -116,7 +115,7 @@ resource "aws_s3_bucket" "my_bucket" {
 resource "aws_iam_role_policy" "ec2_policy" {
   name = "ec2_policy"
   role = aws_iam_role.role_for_s3.id
-
+  
   #ec2:*Describe
   policy = data.aws_iam_policy_document.policy_my_bucket.json
 }
