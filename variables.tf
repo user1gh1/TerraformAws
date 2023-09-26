@@ -4,7 +4,7 @@ variable "ec2_instance_type" {
 }
 variable "Path_to_ssh" {
   type    = string
-  default = "/home/student/.ssh/id_rsa.pub"
+  default = "./keys/my_aws_key.pub"
 }
 variable "access_key" {
   type      = string
