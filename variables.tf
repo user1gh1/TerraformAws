@@ -6,17 +6,6 @@ variable "Path_to_ssh" {
   type    = string
   default = "./keys/my_aws_key.pub"
 }
-variable "access_key" {
-  type      = string
-  default   = "AKIAYDDRM52WFMRRDYPG"
-  sensitive = true
-}
-
-variable "secret_key" {
-  type      = string
-  default   = "GRqDUOBl6uz9wYXq6rVa7a/dPj/zCaYfSklfGRtE"
-  sensitive = true
-}
 ###################################
 variable "templateVarHello" {
   type    = string
