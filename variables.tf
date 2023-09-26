@@ -21,6 +21,7 @@ variable "templateVar1" {
 data "aws_region" "current" {}
 data "aws_availability_zones" "current" {}
 data "aws_caller_identity" "current_account" {}
+/*
 data "aws_ami" "latest_free_ami" {
   most_recent = true
   owners      = ["137112412989"]
@@ -30,7 +31,7 @@ data "aws_ami" "latest_free_ami" {
     values = ["al2023-ami-202*-kernel-6.1-x86_64"]
   }
 }
-/*
+*/
 data "aws_ami" "latest_free_ami" {
   most_recent = true
   owners      = ["099720109477"]
@@ -40,4 +41,4 @@ data "aws_ami" "latest_free_ami" {
     values = ["ubuntu/images/hvm-ssd/ubuntu-focal-20.04-amd64-server-*"]
   }
 }
-*/
+
