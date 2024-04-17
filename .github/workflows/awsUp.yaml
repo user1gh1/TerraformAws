@@ -13,7 +13,7 @@ jobs:
         run: ls
     
       - name: Set working directory
-        working-directory: ./build/
+        working-directory: .
         run: ls
       - name: Your other steps here
         run: |
