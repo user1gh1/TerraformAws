@@ -7,29 +7,52 @@ jobs:
     defaults:
         run:
           shell: bash
-          working-directory: .
-    env:
-      AWS_ACCESS_KEY_ID: ${{ secrets.AWS_ACCESS_KEY }}
-      AWS_SECRET_ACCESS_KEY: ${{ secrets.AWS_SECREY_KEY }}
+          steps:
+            - name: List files before
+              run: ls
     steps:
-        - name: Get code
-          uses: actions/checkout@v3
-        
-        - name: Setup Terraform
-          uses: hashicorp/setup-terraform@v2
-          with:
-            terraform_version: 1.5.6
+      - name: Set working directory
+        working-directory: ./build/
+        run: ls
+      - name: Your other steps here
+        run: |
+          # Your commands here
+      - name: List files after
+        run: ls
 
-        - name: Init Terraform
-          run: terraform init
+# name: DockerTestServer
+# on: 
+#   workflow_dispatch:
+# jobs:
+#   Download:
+#     runs-on: ubuntu-latest
+#     defaults:
+#         run:
+#           shell: bash
+#           working-directory: .
+        
+#     env:
+#       AWS_ACCESS_KEY_ID: ${{ secrets.AWS_ACCESS_KEY }}
+#       AWS_SECRET_ACCESS_KEY: ${{ secrets.AWS_SECREY_KEY }}
+#     steps:
+#         - name: Get code
+#           uses: actions/checkout@v3
+        
+#         - name: Setup Terraform
+#           uses: hashicorp/setup-terraform@v2
+#           with:
+#             terraform_version: 1.5.6
+
+#         - name: Init Terraform
+#           run: terraform init
           
-        - name: Terraform plan
-          run: terraform plan
+#         - name: Terraform plan
+#           run: terraform plan
           
-        - name: Apply Terraform
-          run: terraform apply -auto-approve
-        # Add a 3-minute delay before destroying resources
-        - name: Delay
-          run: sleep 180 
-        - name: Destroy Terraform Resources
-          run: terraform destroy -auto-approve
+#         - name: Apply Terraform
+#           run: terraform apply -auto-approve
+#         # Add a 3-minute delay before destroying resources
+#         - name: Delay
+#           run: sleep 180 
+#         - name: Destroy Terraform Resources
+#           run: terraform destroy -auto-approve
