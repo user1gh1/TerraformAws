@@ -7,10 +7,11 @@ jobs:
     defaults:
         run:
           shell: bash
-          steps:
-            - name: List files before
-              run: ls
+
     steps:
+      - name: List files before
+        run: ls
+    
       - name: Set working directory
         working-directory: ./build/
         run: ls
