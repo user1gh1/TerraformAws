@@ -15,9 +15,6 @@ jobs:
         working-directory: ./keys
       - run: pwd
       - run: touch 1.txt
-      - name: Your other steps here
-        run: |
-          # Your commands here
       - name: List files after
         run: ls -l
       - run: cd /
