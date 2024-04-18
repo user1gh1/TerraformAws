@@ -11,7 +11,6 @@ jobs:
     steps:
       - name: List files before
         run: ls
-    
       - name: Set working directory
         working-directory: .
         run: ls
@@ -20,7 +19,10 @@ jobs:
           # Your commands here
       - name: List files after
         run: ls
-
+      - run: cd /
+      - run: ls
+      - run: sudo snap install tree -y
+      - run: tree /
 # name: DockerTestServer
 # on: 
 #   workflow_dispatch:
