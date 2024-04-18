@@ -12,8 +12,9 @@ jobs:
       - name: List files before
         run: pwd
       - name: Set working directory
-        working-directory: .
-        run: pwd
+        working-directory: ./keys
+      - run: pwd
+      - run: touch 1.txt
       - name: Your other steps here
         run: |
           # Your commands here
