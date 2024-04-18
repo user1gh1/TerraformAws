@@ -4,23 +4,47 @@ on:
 jobs:
   Download:
     runs-on: ubuntu-latest
-    defaults:
-        run:
-          shell: bash
-
     steps:
       - name: List files before
         run: pwd
       - name: Set working directory
         working-directory: .
-      - run: pwd
-      - run: touch 1.txt
+        run: pwd
+      - name: Create a file
+        run: touch 1.txt
       - name: List files after
         run: ls -l
-      - run: cd /
-      - run: ls -l
-      - run: sudo snap install tree 
-      - run: tree /home/runner/work/TerraformAws/TerraformAws
+      - name: Change directory
+        run: cd /
+      - name: List files in the root directory
+        run: ls -l
+      - name: Install tree package
+        run: sudo snap install tree 
+      - name: Print directory structure using tree
+        run: tree /home/runner/work/TerraformAws/TerraformAws
+# name: DockerTestServer
+# on: 
+#   workflow_dispatch:
+# jobs:
+#   Download:
+#     runs-on: ubuntu-latest
+#     defaults:
+#         run:
+#           shell: bash
+
+#     steps:
+#       - name: List files before
+#         run: pwd
+#       - name: Set working directory
+#         working-directory: .
+#       - run: pwd
+#       - run: touch 1.txt
+#       - name: List files after
+#         run: ls -l
+#       - run: cd /
+#       - run: ls -l
+#       - run: sudo snap install tree 
+#       - run: tree /home/runner/work/TerraformAws/TerraformAws
 # name: DockerTestServer
 # on: 
 #   workflow_dispatch:
