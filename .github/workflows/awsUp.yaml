@@ -4,11 +4,14 @@ on:
 jobs:
   Download:
     runs-on: ubuntu-latest
+    defaults:
+        run: 
+          shell: bash
+          working-directory: ./keys
     steps:
+      - name: Get code
+        uses: actions/checkout@v3
       - name: List files before
-        run: pwd
-      - name: Set working directory
-        working-directory: ./keys
         run: pwd
       - name: Create a file
         run: touch 1.txt
