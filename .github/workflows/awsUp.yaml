@@ -22,7 +22,7 @@ jobs:
       - run: cd /
       - run: ls -l
       - run: sudo snap install tree 
-      - run: tree /
+      - run: /home/runner/work/TerraformAws/TerraformAws
 # name: DockerTestServer
 # on: 
 #   workflow_dispatch:
